@@ -12,7 +12,7 @@
 
 @protocol LIHInputViewControllerDelegate  <NSObject>
 
--(void)inputController:(LIHInputViewController *)controller didFinishWithText:(NSString *)text getTitle:(NSString *)title;
+-(void)inputController:(LIHInputViewController *)controller didFinishWithText:(NSString *)text getTitle:(NSString *)title getPhoto:(NSObject *)photo;
 
 @end
 

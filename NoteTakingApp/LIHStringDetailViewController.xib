@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LIHStringDetailViewController">
             <connections>
+                <outlet property="imageButton" destination="LyW-LX-7dv" id="DoW-Re-q3s"/>
+                <outlet property="imageView" destination="SBL-Dr-rZd" id="USq-1b-XTe"/>
                 <outlet property="textView" destination="EYQ-3q-4Eh" id="ITg-ti-snW"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -16,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9cn-5h-N3a">
-                    <rect key="frame" x="21" y="20" width="279" height="345"/>
+                    <rect key="frame" x="21" y="20" width="279" height="219"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYQ-3q-4Eh">
@@ -29,6 +31,19 @@
                         </textView>
                     </subviews>
                 </scrollView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SBL-Dr-rZd">
+                    <rect key="frame" x="40" y="247" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-W1-t4v">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="Photo" width="138" id="LyW-LX-7dv"/>
+                        <barButtonItem title="Email" width="124" id="wqF-PW-xWw"/>
+                    </items>
+                    <color key="tintColor" red="1" green="0.2824407511" blue="0.65514718969999997" alpha="1" colorSpace="calibratedRGB"/>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <color key="tintColor" red="0.75737471489999997" green="0.51060475630000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>

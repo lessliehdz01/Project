@@ -1,5 +1,5 @@
 //
-//  LIHInputViewController.m
+//  LIHInputViewControl/Users/lessliehernandez/college:columbia/NoteTakingApp/NoteTakingApp/LIHStringDetailViewController.mler.m
 //  NoteTakingApp
 //
 //  Created by Lesslie Hernandez on 5/7/14.
@@ -49,7 +49,7 @@
         // in the navigation stack.
         NSLog(@"check");
             if (![self.notes.text isEqualToString:@""]) {
-                [self.delegate inputController:self didFinishWithText:self.notes.text getTitle:self.Title.text];
+                [self.delegate inputController:self didFinishWithText:self.notes.text getTitle:self.Title.text getPhoto:self.imageView.image];
                 [self.notes resignFirstResponder];
             } 
     }

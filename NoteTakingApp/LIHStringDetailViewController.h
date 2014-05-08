@@ -10,6 +10,6 @@
 
 @interface LIHStringDetailViewController : UIViewController
 
-- (instancetype)initWithRow:(NSInteger)row string:(NSString *)string array:(NSMutableArray *)stringarray array:(NSMutableArray *)titlesarray;
+- (instancetype)initWithRow:(NSInteger)row string:(NSString *)string array:(NSMutableArray *)stringarray array:(NSMutableArray *)titlesarray  array:(NSMutableArray *)photosarray;
 
 @end

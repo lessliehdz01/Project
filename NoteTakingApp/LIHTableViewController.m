@@ -29,6 +29,7 @@
         // Custom initialization
         self.strings = [NSMutableArray array];
         self.titles = [NSMutableArray array];
+        self.photos = [NSMutableArray array];
 
     }
     return self;
@@ -74,10 +75,11 @@
 
 #pragma mark - LIHInputViewControllerDelegate Methods
 
--(void)inputController:(LIHInputViewController *)controller didFinishWithText:(NSString *)text getTitle:(NSString *)title
+-(void)inputController:(LIHInputViewController *)controller didFinishWithText:(NSString *)text getTitle:(NSString *)title getPhoto:(NSObject *)photo
 {
     [self.strings addObject:text];
     [self.titles addObject:title];
+    [self.photos addObject:photo];
     [self.tableView reloadData];
     //[self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -117,7 +119,8 @@
     LIHStringDetailViewController *detailVC = [[LIHStringDetailViewController alloc]initWithRow:indexPath.row
                                                                     string:self.strings[indexPath.row]
                                                                     array:self.strings
-                                                                    array:self.titles] ;
+                                                                    array:self.titles
+                                                                    array:self.photos] ;
     [self.navigationController pushViewController:detailVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.tableView reloadData];

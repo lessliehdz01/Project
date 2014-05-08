@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *strings;
 @property (nonatomic, strong) NSMutableArray *titles;
+@property (nonatomic, strong) NSMutableArray *photos;
 @property (nonatomic, strong, retain) UITableView *tableView;
 
 @end
