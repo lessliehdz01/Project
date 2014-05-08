@@ -68,7 +68,8 @@
     
     inputVC.delegate = self;
     
-    [self presentViewController:inputVC animated:YES completion:nil];
+   // [self presentViewController:inputVC animated:YES completion:nil];
+    [self.navigationController pushViewController:inputVC animated:YES];
 }
 
 #pragma mark - LIHInputViewControllerDelegate Methods
@@ -78,7 +79,7 @@
     [self.strings addObject:text];
     [self.titles addObject:title];
     [self.tableView reloadData];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -94,8 +95,19 @@
     if(!cell){
         cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:@"cellReuseIdentifier"];
     }
-    cell.textLabel.text = self.titles[indexPath.row];
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+     [dateFormatter setDateFormat:@"MM/dd/yyyy  HH:mm a"];
+    NSString *Date = [dateFormatter stringFromDate:date];
+    // NSLog(@"%@",Date);
     
+    
+    
+   // [dateFormatter release];
+    NSString *s = self.titles[indexPath.row];
+    s = [s stringByAppendingString: @"   "];
+    s = [s stringByAppendingString: Date];
+    cell.textLabel.text = s;
     return cell;
 }
 

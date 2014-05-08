@@ -55,13 +55,12 @@
 
 -(void)doneButtonPressed:(UIBarButtonItem *)sender
 {
-    LIHTableViewController* tVC = [[LIHTableViewController alloc] init];
+   // LIHTableViewController* tVC = [[LIHTableViewController alloc] init];
     //[tVC.strings addObject:self.textView.text];
     self.stringarray[self.row] = self.textView.text;
     [self.view endEditing:YES];
     //NSLog(@"%@",tVC.strings[0]);
-    [tVC.tableView reloadData];
-    NSLog(@"%@",self.stringarray[self.row]);
+  
 }
 
 @end

@@ -8,9 +8,11 @@
 
 #import "LIHInputViewController.h"
 
-@interface LIHInputViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@interface LIHInputViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *Title;
+@property (weak, nonatomic) IBOutlet UITextView *notes;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *Photo;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -28,25 +30,65 @@
 {
     [super viewDidLoad];
     
-    [self.textField addTarget:self
-                       action:@selector(textFieldDidFinish:)
-             forControlEvents:UIControlEventEditingDidEndOnExit];
-    self.textField.returnKeyType = UIReturnKeyDone;
+    
+    //make title limited characters
+    [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(check) userInfo:nil repeats:YES ];
+    //add done button to finish edting and save
+     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    self.Photo.target = self;
+    self.Photo.action = @selector(imageButtonPressed:);
+    
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
 }
+//only saves note when the nav goes back
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        // back button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+        NSLog(@"check");
+            if (![self.notes.text isEqualToString:@""]) {
+                [self.delegate inputController:self didFinishWithText:self.notes.text getTitle:self.Title.text];
+                [self.notes resignFirstResponder];
+            } 
+    }
+    [super viewWillDisappear:animated];
+}
 
-
-- (void)textFieldDidFinish:(UITextField *)textField
-{
-    if (![textField.text isEqualToString:@""]) {
-        [self.delegate inputController:self didFinishWithText:textField.text getTitle:self.Title.text];
-    } else {
-        [[[UIAlertView alloc] initWithTitle:@"Warning!"
-                                    message:@"You must have a non-empty string to continue."
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+//cuts off title so it isnt too long
+-(void)check{
+    if([self.Title.text length]>=15){
+        self.Title.text = [self.Title.text substringWithRange:NSMakeRange(0, 14)];
     }
 }
+-(IBAction)imageButtonPressed:(UIBarButtonItem*)sender{
+    NSLog(@"What");
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    [imagePicker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+    [imagePicker setDelegate:self];
+    
+    [self presentViewController:imagePicker
+                       animated:YES
+                     completion:nil];
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    self.imageView.image= image;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+//gets rid of the keyboard
+-(void)doneButtonPressed:(UIBarButtonItem *)sender{
+
+    [self.notes resignFirstResponder];
+    [self.Title resignFirstResponder];
+}
+
+
 
 @end
