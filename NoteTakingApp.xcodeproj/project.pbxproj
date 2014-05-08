@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5EFD2649191AF0DE00B0202F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD2648191AF0DE00B0202F /* Foundation.framework */; };
+		5EFD264B191AF0DE00B0202F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD264A191AF0DE00B0202F /* CoreGraphics.framework */; };
+		5EFD264D191AF0DE00B0202F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD264C191AF0DE00B0202F /* UIKit.framework */; };
+		5EFD2653191AF0DE00B0202F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD2651191AF0DE00B0202F /* InfoPlist.strings */; };
+		5EFD2655191AF0DE00B0202F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD2654191AF0DE00B0202F /* main.m */; };
+		5EFD2659191AF0DE00B0202F /* LIHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD2658191AF0DE00B0202F /* LIHAppDelegate.m */; };
+		5EFD265B191AF0DE00B0202F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD265A191AF0DE00B0202F /* Images.xcassets */; };
+		5EFD2662191AF0DE00B0202F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD2661191AF0DE00B0202F /* XCTest.framework */; };
+		5EFD2663191AF0DE00B0202F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD2648191AF0DE00B0202F /* Foundation.framework */; };
+		5EFD2664191AF0DE00B0202F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD264C191AF0DE00B0202F /* UIKit.framework */; };
+		5EFD266C191AF0DE00B0202F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD266A191AF0DE00B0202F /* InfoPlist.strings */; };
+		5EFD266E191AF0DE00B0202F /* NoteTakingAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD266D191AF0DE00B0202F /* NoteTakingAppTests.m */; };
+		5EFD267C191AFDED00B0202F /* LIHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD267B191AFDED00B0202F /* LIHTableViewController.m */; };
+		5EFD2686191B0DA600B0202F /* LIHInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD2684191B0DA600B0202F /* LIHInputViewController.m */; };
+		5EFD2687191B0DA600B0202F /* LIHInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD2685191B0DA600B0202F /* LIHInputViewController.xib */; };
+		5EFD268B191B13C000B0202F /* LIHStringDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD2689191B13C000B0202F /* LIHStringDetailViewController.m */; };
+		5EFD268C191B13C000B0202F /* LIHStringDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD268A191B13C000B0202F /* LIHStringDetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EFD2665191AF0DE00B0202F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EFD263D191AF0DD00B0202F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EFD2644191AF0DD00B0202F;
+			remoteInfo = NoteTakingApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5EFD2645191AF0DD00B0202F /* NoteTakingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTakingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EFD2648191AF0DE00B0202F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5EFD264A191AF0DE00B0202F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5EFD264C191AF0DE00B0202F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5EFD2650191AF0DE00B0202F /* NoteTakingApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoteTakingApp-Info.plist"; sourceTree = "<group>"; };
+		5EFD2652191AF0DE00B0202F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5EFD2654191AF0DE00B0202F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EFD2656191AF0DE00B0202F /* NoteTakingApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoteTakingApp-Prefix.pch"; sourceTree = "<group>"; };
+		5EFD2657191AF0DE00B0202F /* LIHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LIHAppDelegate.h; sourceTree = "<group>"; };
+		5EFD2658191AF0DE00B0202F /* LIHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LIHAppDelegate.m; sourceTree = "<group>"; };
+		5EFD265A191AF0DE00B0202F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5EFD2660191AF0DE00B0202F /* NoteTakingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteTakingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EFD2661191AF0DE00B0202F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5EFD2669191AF0DE00B0202F /* NoteTakingAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoteTakingAppTests-Info.plist"; sourceTree = "<group>"; };
+		5EFD266B191AF0DE00B0202F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5EFD266D191AF0DE00B0202F /* NoteTakingAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteTakingAppTests.m; sourceTree = "<group>"; };
+		5EFD267A191AFDED00B0202F /* LIHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIHTableViewController.h; sourceTree = "<group>"; };
+		5EFD267B191AFDED00B0202F /* LIHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIHTableViewController.m; sourceTree = "<group>"; };
+		5EFD2683191B0DA600B0202F /* LIHInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIHInputViewController.h; sourceTree = "<group>"; };
+		5EFD2684191B0DA600B0202F /* LIHInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIHInputViewController.m; sourceTree = "<group>"; };
+		5EFD2685191B0DA600B0202F /* LIHInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIHInputViewController.xib; sourceTree = "<group>"; };
+		5EFD2688191B13C000B0202F /* LIHStringDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIHStringDetailViewController.h; sourceTree = "<group>"; };
+		5EFD2689191B13C000B0202F /* LIHStringDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIHStringDetailViewController.m; sourceTree = "<group>"; };
+		5EFD268A191B13C000B0202F /* LIHStringDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LIHStringDetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EFD2642191AF0DD00B0202F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EFD264B191AF0DE00B0202F /* CoreGraphics.framework in Frameworks */,
+				5EFD264D191AF0DE00B0202F /* UIKit.framework in Frameworks */,
+				5EFD2649191AF0DE00B0202F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EFD265D191AF0DE00B0202F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EFD2662191AF0DE00B0202F /* XCTest.framework in Frameworks */,
+				5EFD2664191AF0DE00B0202F /* UIKit.framework in Frameworks */,
+				5EFD2663191AF0DE00B0202F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5EFD263C191AF0DD00B0202F = {
+			isa = PBXGroup;
+			children = (
+				5EFD264E191AF0DE00B0202F /* NoteTakingApp */,
+				5EFD2667191AF0DE00B0202F /* NoteTakingAppTests */,
+				5EFD2647191AF0DD00B0202F /* Frameworks */,
+				5EFD2646191AF0DD00B0202F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5EFD2646191AF0DD00B0202F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD2645191AF0DD00B0202F /* NoteTakingApp.app */,
+				5EFD2660191AF0DE00B0202F /* NoteTakingAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EFD2647191AF0DD00B0202F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD2648191AF0DE00B0202F /* Foundation.framework */,
+				5EFD264A191AF0DE00B0202F /* CoreGraphics.framework */,
+				5EFD264C191AF0DE00B0202F /* UIKit.framework */,
+				5EFD2661191AF0DE00B0202F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EFD264E191AF0DE00B0202F /* NoteTakingApp */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD2657191AF0DE00B0202F /* LIHAppDelegate.h */,
+				5EFD2658191AF0DE00B0202F /* LIHAppDelegate.m */,
+				5EFD265A191AF0DE00B0202F /* Images.xcassets */,
+				5EFD264F191AF0DE00B0202F /* Supporting Files */,
+				5EFD267A191AFDED00B0202F /* LIHTableViewController.h */,
+				5EFD267B191AFDED00B0202F /* LIHTableViewController.m */,
+				5EFD2688191B13C000B0202F /* LIHStringDetailViewController.h */,
+				5EFD2689191B13C000B0202F /* LIHStringDetailViewController.m */,
+				5EFD268A191B13C000B0202F /* LIHStringDetailViewController.xib */,
+				5EFD2683191B0DA600B0202F /* LIHInputViewController.h */,
+				5EFD2684191B0DA600B0202F /* LIHInputViewController.m */,
+				5EFD2685191B0DA600B0202F /* LIHInputViewController.xib */,
+			);
+			path = NoteTakingApp;
+			sourceTree = "<group>";
+		};
+		5EFD264F191AF0DE00B0202F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD2650191AF0DE00B0202F /* NoteTakingApp-Info.plist */,
+				5EFD2651191AF0DE00B0202F /* InfoPlist.strings */,
+				5EFD2654191AF0DE00B0202F /* main.m */,
+				5EFD2656191AF0DE00B0202F /* NoteTakingApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EFD2667191AF0DE00B0202F /* NoteTakingAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD266D191AF0DE00B0202F /* NoteTakingAppTests.m */,
+				5EFD2668191AF0DE00B0202F /* Supporting Files */,
+			);
+			path = NoteTakingAppTests;
+			sourceTree = "<group>";
+		};
+		5EFD2668191AF0DE00B0202F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD2669191AF0DE00B0202F /* NoteTakingAppTests-Info.plist */,
+				5EFD266A191AF0DE00B0202F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5EFD2644191AF0DD00B0202F /* NoteTakingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EFD2671191AF0DE00B0202F /* Build configuration list for PBXNativeTarget "NoteTakingApp" */;
+			buildPhases = (
+				5EFD2641191AF0DD00B0202F /* Sources */,
+				5EFD2642191AF0DD00B0202F /* Frameworks */,
+				5EFD2643191AF0DD00B0202F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoteTakingApp;
+			productName = NoteTakingApp;
+			productReference = 5EFD2645191AF0DD00B0202F /* NoteTakingApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5EFD265F191AF0DE00B0202F /* NoteTakingAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EFD2674191AF0DE00B0202F /* Build configuration list for PBXNativeTarget "NoteTakingAppTests" */;
+			buildPhases = (
+				5EFD265C191AF0DE00B0202F /* Sources */,
+				5EFD265D191AF0DE00B0202F /* Frameworks */,
+				5EFD265E191AF0DE00B0202F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EFD2666191AF0DE00B0202F /* PBXTargetDependency */,
+			);
+			name = NoteTakingAppTests;
+			productName = NoteTakingAppTests;
+			productReference = 5EFD2660191AF0DE00B0202F /* NoteTakingAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EFD263D191AF0DD00B0202F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LIH;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Lesslie Hernandez";
+				TargetAttributes = {
+					5EFD265F191AF0DE00B0202F = {
+						TestTargetID = 5EFD2644191AF0DD00B0202F;
+					};
+				};
+			};
+			buildConfigurationList = 5EFD2640191AF0DD00B0202F /* Build configuration list for PBXProject "NoteTakingApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5EFD263C191AF0DD00B0202F;
+			productRefGroup = 5EFD2646191AF0DD00B0202F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EFD2644191AF0DD00B0202F /* NoteTakingApp */,
+				5EFD265F191AF0DE00B0202F /* NoteTakingAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EFD2643191AF0DD00B0202F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EFD268C191B13C000B0202F /* LIHStringDetailViewController.xib in Resources */,
+				5EFD2687191B0DA600B0202F /* LIHInputViewController.xib in Resources */,
+				5EFD2653191AF0DE00B0202F /* InfoPlist.strings in Resources */,
+				5EFD265B191AF0DE00B0202F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EFD265E191AF0DE00B0202F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EFD266C191AF0DE00B0202F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EFD2641191AF0DD00B0202F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EFD268B191B13C000B0202F /* LIHStringDetailViewController.m in Sources */,
+				5EFD2686191B0DA600B0202F /* LIHInputViewController.m in Sources */,
+				5EFD2659191AF0DE00B0202F /* LIHAppDelegate.m in Sources */,
+				5EFD2655191AF0DE00B0202F /* main.m in Sources */,
+				5EFD267C191AFDED00B0202F /* LIHTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EFD265C191AF0DE00B0202F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EFD266E191AF0DE00B0202F /* NoteTakingAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EFD2666191AF0DE00B0202F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EFD2644191AF0DD00B0202F /* NoteTakingApp */;
+			targetProxy = 5EFD2665191AF0DE00B0202F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5EFD2651191AF0DE00B0202F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EFD2652191AF0DE00B0202F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5EFD266A191AF0DE00B0202F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EFD266B191AF0DE00B0202F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5EFD266F191AF0DE00B0202F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5EFD2670191AF0DE00B0202F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EFD2672191AF0DE00B0202F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteTakingApp/NoteTakingApp-Prefix.pch";
+				INFOPLIST_FILE = "NoteTakingApp/NoteTakingApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5EFD2673191AF0DE00B0202F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteTakingApp/NoteTakingApp-Prefix.pch";
+				INFOPLIST_FILE = "NoteTakingApp/NoteTakingApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5EFD2675191AF0DE00B0202F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NoteTakingApp.app/NoteTakingApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteTakingApp/NoteTakingApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NoteTakingAppTests/NoteTakingAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5EFD2676191AF0DE00B0202F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NoteTakingApp.app/NoteTakingApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteTakingApp/NoteTakingApp-Prefix.pch";
+				INFOPLIST_FILE = "NoteTakingAppTests/NoteTakingAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EFD2640191AF0DD00B0202F /* Build configuration list for PBXProject "NoteTakingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EFD266F191AF0DE00B0202F /* Debug */,
+				5EFD2670191AF0DE00B0202F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EFD2671191AF0DE00B0202F /* Build configuration list for PBXNativeTarget "NoteTakingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EFD2672191AF0DE00B0202F /* Debug */,
+				5EFD2673191AF0DE00B0202F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5EFD2674191AF0DE00B0202F /* Build configuration list for PBXNativeTarget "NoteTakingAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EFD2675191AF0DE00B0202F /* Debug */,
+				5EFD2676191AF0DE00B0202F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5EFD263D191AF0DD00B0202F /* Project object */;
+}
