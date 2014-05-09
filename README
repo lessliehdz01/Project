@@ -1,1 +1,17 @@
-?
+Lesslie Hernandez
+lih2105	
+05/09/2014
+
+
+I tested my app with my iphone 5 and it works perfectly. It also seems to work on the simulator, only hiccup was that I dont have pictures to chosse from so when prompted to choose a picture, there are no pictures. 
+
+When starting up the application, the user first sees a lined screen with a title My Notes. The user can then click on the + button on the upper right to add a new note. Once this button is clicked you are taken to a new screen. Here you can input a title and the body of the note.The user can click on done to dismiss the keyboard. At the bottom of the screen there is a toolbar containing a photo bar button and an email bar button. The user can tap on the photo button and can choose from their photo album which picture they wish to attach. (**NOTE the user must choose a picture before going back to list or app will crash. will elaborate below). The picture then appears below the text view. When the email bar button is tapped a new view appears. The app fills out the email for the user. It adds the title as the subject and the note as the body of the email and the picture as an attatchment. I have it set up so that it is sent to my email lih2105@columbia.edu, but the user can edit this and send it to whoever they would like. If the email was sent a message will appear notifying the user that the email was sent. Same thing happens if email was saved or cancelled. Once the user goes back to the list of notes, it will appear in the table view along with a time stamp. When clicked on, a new view showing the note and photo will appear, here the user can modify the note or change the picture. They can also choose to email it. When the user goes back to list, the changes will be made. If a user wishes to delete a note, they can swipe to the left and a delete button will appear, once clicked on, the note will be removed from the list.
+
+
+The way my program works is that i have 3 NSMutable arrays, each containing titles, notes, and photos. According to which row the user is on in the table view, is index where the information will be stored in the array. It is because of this that I ended up having a problem with how a user chooses to fill out a note. The user MUST choose a title,note, and picture, otherwise the program will crash due to indexing. I was having a hard time getting around this. I wanted to add an alert button notifying the user that they must fill in title,note,and photo, but I was not sure how to do it so that it would pop up if the user tried to navigate back to list of notes. I tried it, but the alert would pop up, however the view still changed. If the user does not fill out anything it works perfectly, the app just doesnt save it. It also works perfectly if the user fills out everything. 
+
+Another little problem I came across was saving my photos. I was able to do it, however it takes a while on my phone. I had to use NSKeyedArchiver because it was not working with writetoFile. It still seems to work, however it just takes some time. Maybe like a second or two, I am not sure if this is expected. 
+
+I have my app set up so that if the files under which my arrays are stored in are not found it will create new arrays. If they are found then it will load the files and reload the tableview to show these saved notes. 
+
+Other than not giving the user the option of whether or not to include a photo, my app has all the requirements. And when tested on my iphone works perfectly.   
