@@ -15,6 +15,7 @@
 //@property (nonatomic, strong, retain) UITableView *tableView;
 
 //@property (nonatomic, strong) NSMutableArray *strings;
+@property (nonatomic, strong) NSArray *tempstrings;
 
 @end
 
@@ -24,13 +25,31 @@
 
 - (instancetype) init
 {
+    
+    
     //if has no nib file
     if (self = [self initWithNibName:nil bundle:nil]) {
         // Custom initialization
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        
+        NSString *stringsPath = [docPath stringByAppendingPathComponent:@"strings"];
+        NSString *titlePath = [docPath stringByAppendingPathComponent:@"titles"];
+        NSString *imagesPath = [docPath stringByAppendingPathComponent:@"imges"];
+        NSFileManager*  fileManager = [NSFileManager defaultManager];
+        
+        if([fileManager fileExistsAtPath:imagesPath]){
+            NSLog(@"Plist file exists at expected location.");
+            self.strings = [NSMutableArray arrayWithContentsOfFile:stringsPath];
+            self.titles = [NSMutableArray arrayWithContentsOfFile:titlePath];
+            self.photos = [NSKeyedUnarchiver unarchiveObjectWithFile:imagesPath];//[NSMutableArray arrayWithContentsOfFile:imagesPath];
+            int size = [self.photos count];
+            NSLog(@"there are %d objects in the array", size);
+        }
+        else{
         self.strings = [NSMutableArray array];
         self.titles = [NSMutableArray array];
         self.photos = [NSMutableArray array];
-
+        }
     }
     return self;
 }
@@ -56,20 +75,41 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
     
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    
 }
 //reloads table view when navigating back to this table view
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData]; // to reload selected cell
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    
+    NSString *stringsPath = [docPath stringByAppendingPathComponent:@"strings"];
+    NSString *titlePath = [docPath stringByAppendingPathComponent:@"titles"];
+    NSString *imagesPath = [docPath stringByAppendingPathComponent:@"images"];
+    if([self.strings writeToFile:stringsPath atomically:YES])
+    {
+        NSLog(@"write");
+    }
+    if([self.titles writeToFile:titlePath atomically:YES])
+    {
+        NSLog(@"write2");
+    }
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.photos];
+    [data writeToFile:imagesPath options:NSDataWritingAtomic error:nil];
+
+
 }
+
+
 
 -(void)addButtonPressed:(UIBarButtonItem *)sender
 {
     LIHInputViewController *inputVC = [[LIHInputViewController alloc]init];
     
     inputVC.delegate = self;
+
     
-   // [self presentViewController:inputVC animated:YES completion:nil];
     [self.navigationController pushViewController:inputVC animated:YES];
 }
 
@@ -77,10 +117,12 @@
 
 -(void)inputController:(LIHInputViewController *)controller didFinishWithText:(NSString *)text getTitle:(NSString *)title getPhoto:(NSObject *)photo
 {
+
     [self.strings addObject:text];
     [self.titles addObject:title];
     [self.photos addObject:photo];
     [self.tableView reloadData];
+ 
     //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -105,7 +147,6 @@
     
     
     
-   // [dateFormatter release];
     NSString *s = self.titles[indexPath.row];
     s = [s stringByAppendingString: @"   "];
     s = [s stringByAppendingString: Date];
@@ -126,6 +167,26 @@
     [self.tableView reloadData];
     
     
+}
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+       // NSDictionary *userData = [self.titles objectAtIndex:indexPath.row];
+        
+        [self.strings removeObjectAtIndex:indexPath.row];
+        [self.titles removeObjectAtIndex:indexPath.row];
+        [self.photos removeObjectAtIndex:indexPath.row];
+        [self.tableView reloadData];
+        
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return YES;
 }
 
 @end

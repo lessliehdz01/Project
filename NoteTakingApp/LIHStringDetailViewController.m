@@ -60,8 +60,12 @@
     self.imageButton.target = self;
     self.imageButton.action = @selector(imageButtonPressed:);
     
+  
+    
     
 }
+
+
 -(IBAction)imageButtonPressed:(UIBarButtonItem*)sender{
  
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
