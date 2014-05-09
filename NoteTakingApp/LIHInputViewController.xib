@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="Photo" destination="jFs-db-cbD" id="W3U-Hp-HdE"/>
                 <outlet property="Title" destination="kKF-yj-jy2" id="pay-b6-aZp"/>
+                <outlet property="emailButton" destination="T57-ti-dfL" id="sGe-B7-Vw0"/>
                 <outlet property="imageView" destination="66z-4M-NUS" id="Eu0-T2-kGD"/>
                 <outlet property="notes" destination="nJH-db-58v" id="6oW-wP-Lkt"/>
                 <outlet property="view" destination="1" id="3"/>

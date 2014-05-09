@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LIHStringDetailViewController">
             <connections>
+                <outlet property="emailButton" destination="wqF-PW-xWw" id="eUi-JK-3Cv"/>
                 <outlet property="imageButton" destination="LyW-LX-7dv" id="DoW-Re-q3s"/>
                 <outlet property="imageView" destination="SBL-Dr-rZd" id="USq-1b-XTe"/>
                 <outlet property="textView" destination="EYQ-3q-4Eh" id="ITg-ti-snW"/>

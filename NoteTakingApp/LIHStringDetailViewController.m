@@ -9,8 +9,7 @@
 #import "LIHStringDetailViewController.h"
 #import "LIHTableViewController.h"
 
-@interface LIHStringDetailViewController ()
-
+@interface LIHStringDetailViewController ()<MFMailComposeViewControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -24,10 +23,10 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *imageButton;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *emailButton;
 
 @end
-//LIHTableViewController* tVC;
-//@synthesize tableView;
+
 
 @implementation LIHStringDetailViewController
 
@@ -52,6 +51,8 @@
     
     self.textView.text = self.string;
     self.imageView.image = self.photoarray[self.row];
+    self.emailButton.target = self;
+    self.emailButton.action = @selector(emailButtonPressed:);
     
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
@@ -64,8 +65,64 @@
     
     
 }
+//email actions
+-(IBAction)emailButtonPressed:(UIBarButtonItem*)sender{
+    // email title
+    NSString *emailTitle = self.title;
+    // Email Content
+    NSString *messageBody = self.textView.text;
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"lih2105@columbia.edu"];
+    
+    MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
+    mailVC.mailComposeDelegate = self;
+    [mailVC setSubject:emailTitle];
+    [mailVC setMessageBody:messageBody isHTML:NO];
+    NSData *imageData = [[NSData alloc]initWithData:UIImagePNGRepresentation(self.imageView.image)];
+    [mailVC addAttachmentData:imageData mimeType:@"image/jpeg" fileName:self.title];
+    [mailVC setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mailVC animated:YES completion:NULL];
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            [[[UIAlertView alloc] initWithTitle:@"CANCELLED"
+                                        message:@"Your email was not sent!"
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+            
+            break;
+        case MFMailComposeResultSaved:
+            [[[UIAlertView alloc] initWithTitle:@"SAVED"
+                                        message:@" "
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+            break;
+        case MFMailComposeResultSent:
+            [[[UIAlertView alloc] initWithTitle:@"SUCCESS!"
+                                        message:@"Your email has been sent!."
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+            
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 
+//image actions
 -(IBAction)imageButtonPressed:(UIBarButtonItem*)sender{
  
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];

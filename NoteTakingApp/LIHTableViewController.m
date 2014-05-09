@@ -123,7 +123,6 @@
     [self.photos addObject:photo];
     [self.tableView reloadData];
  
-    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -143,7 +142,6 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
      [dateFormatter setDateFormat:@"MM/dd/yyyy  HH:mm a"];
     NSString *Date = [dateFormatter stringFromDate:date];
-    // NSLog(@"%@",Date);
     
     
     
@@ -173,7 +171,6 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-       // NSDictionary *userData = [self.titles objectAtIndex:indexPath.row];
         
         [self.strings removeObjectAtIndex:indexPath.row];
         [self.titles removeObjectAtIndex:indexPath.row];
