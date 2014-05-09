@@ -12,10 +12,6 @@
 
 @interface LIHTableViewController () <UITableViewDataSource, UITableViewDelegate, LIHInputViewControllerDelegate>
 
-//@property (nonatomic, strong, retain) UITableView *tableView;
-
-//@property (nonatomic, strong) NSMutableArray *strings;
-@property (nonatomic, strong) NSArray *tempstrings;
 
 @end
 
@@ -34,16 +30,15 @@
         
         NSString *stringsPath = [docPath stringByAppendingPathComponent:@"strings"];
         NSString *titlePath = [docPath stringByAppendingPathComponent:@"titles"];
-        NSString *imagesPath = [docPath stringByAppendingPathComponent:@"imges"];
+        NSString *imagesPath = [docPath stringByAppendingPathComponent:@"images"];
         NSFileManager*  fileManager = [NSFileManager defaultManager];
         
         if([fileManager fileExistsAtPath:imagesPath]){
             NSLog(@"Plist file exists at expected location.");
             self.strings = [NSMutableArray arrayWithContentsOfFile:stringsPath];
             self.titles = [NSMutableArray arrayWithContentsOfFile:titlePath];
-            self.photos = [NSKeyedUnarchiver unarchiveObjectWithFile:imagesPath];//[NSMutableArray arrayWithContentsOfFile:imagesPath];
-            int size = [self.photos count];
-            NSLog(@"there are %d objects in the array", size);
+            self.photos = [NSKeyedUnarchiver unarchiveObjectWithFile:imagesPath];
+        
         }
         else{
         self.strings = [NSMutableArray array];
@@ -89,11 +84,11 @@
     NSString *imagesPath = [docPath stringByAppendingPathComponent:@"images"];
     if([self.strings writeToFile:stringsPath atomically:YES])
     {
-        NSLog(@"write");
+        NSLog(@"successfully written to file");
     }
     if([self.titles writeToFile:titlePath atomically:YES])
     {
-        NSLog(@"write2");
+       NSLog(@"succesfully written to file");
     }
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.photos];
     [data writeToFile:imagesPath options:NSDataWritingAtomic error:nil];
@@ -108,6 +103,7 @@
     LIHInputViewController *inputVC = [[LIHInputViewController alloc]init];
     
     inputVC.delegate = self;
+
 
     
     [self.navigationController pushViewController:inputVC animated:YES];
@@ -138,17 +134,14 @@
     if(!cell){
         cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:@"cellReuseIdentifier"];
     }
-    NSDate *date = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-     [dateFormatter setDateFormat:@"MM/dd/yyyy  HH:mm a"];
-    NSString *Date = [dateFormatter stringFromDate:date];
+
     
     
     
     NSString *s = self.titles[indexPath.row];
-    s = [s stringByAppendingString: @"   "];
-    s = [s stringByAppendingString: Date];
+
     cell.textLabel.text = s;
+    cell.backgroundColor = [UIColor purpleColor];
     return cell;
 }
 

@@ -48,8 +48,16 @@
 //only saves note when the nav goes back
 -(void) viewWillDisappear:(BOOL)animated {
     if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        //add timestamp
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MM/dd/yyyy  HH:mm a"];
+        NSString *Date = [dateFormatter stringFromDate:date];
+        NSString *s = self.Title.text;
+        s = [s stringByAppendingString: @"   "];
+        self.Title.text = [s stringByAppendingString: Date];
       
-        NSLog(@"check");
+        //NSLog(@"check");
             if (![self.notes.text isEqualToString:@""]) {
                 [self.delegate inputController:self didFinishWithText:self.notes.text getTitle:self.Title.text getPhoto:self.imageView.image];
                 [self.notes resignFirstResponder];
@@ -140,11 +148,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-//gets rid of the keyboard
+//gets rid of the keyboard 
 -(void)doneButtonPressed:(UIBarButtonItem *)sender{
+    
 
     [self.notes resignFirstResponder];
     [self.Title resignFirstResponder];
+    
+
 }
 
 
